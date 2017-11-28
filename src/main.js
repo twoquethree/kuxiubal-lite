@@ -1,8 +1,9 @@
 import Vue from 'vue'
 import App from './App.vue'
 
-// UIKit
-import '../node_modules/uikit/src/less/uikit.less'
+/* UIKit */
+import "./assets/styles/app.scss";
+// import ''
 import UIkit from 'uikit';
 import Icons from 'uikit/dist/js/uikit-icons';
 
