@@ -29,31 +29,19 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
+
 export default {
-  data() {
-    return {
-      players: [{
-          name: 'John Doe',
-          account: 123456789
-        },
-        {
-          name: 'Karen Doe',
-          account: 101112134
-        },
-        {
-          name: 'Gina Doe',
-          account: 151617189
-        }
-      ]
+  computed: {
+    players() {
+      return this.$store.state.players
     }
   },
   methods: {
-    removePlayer() {
-      console.log('removing player')
-    },
-    shufflePlayers() {
-      console.log('shuffeling player')
-    }
+    ...mapMutations([
+      'removePlayer',
+      'shufflePlayers'
+    ])
   }
 }
 </script>

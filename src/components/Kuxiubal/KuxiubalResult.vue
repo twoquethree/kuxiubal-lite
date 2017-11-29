@@ -39,33 +39,23 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
+
 export default {
-  data() {
-    return {
-      gameResult: [{
-          name: 'John Doe',
-          account: 123456789
-        },
-        {
-          name: 'Karen Doe',
-          account: 101112134
-        },
-        {
-          name: 'Gina Doe',
-          account: 151617189
-        }
-      ]
+  methods: {
+    ...mapMutations([
+      'shuffleAgain'
+    ]),
+    goBack() {
+      this.$store.state.showPlayers = !this.$store.state.showPlayers
+    },
+    exportResults() {
+      console.log('exporting result')
     }
   },
-  methods: {
-    exportResults() {
-      console.log('exporting results')
-    },
-    shuffleAgain() {
-      console.log('shuffleAgain')
-    },
-    goBack() {
-      console.log('going back')
+  computed:{
+    gameResult(){
+      return this.$store.state.result
     }
   }
 }

@@ -24,6 +24,10 @@
 </template>
 
 <script>
+import {
+  mapMutations
+} from 'vuex'
+
 export default {
   data() {
     return {
@@ -34,8 +38,15 @@ export default {
     }
   },
   methods: {
+    ...mapMutations({
+      add: 'addPlayer'
+    }),
     addPlayer() {
-      console.log('adding player')
+      this.add(this.player)
+      this.player = {
+        name: '',
+        account: ''
+      }
     }
   }
 }
