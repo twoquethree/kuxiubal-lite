@@ -10,8 +10,10 @@ import Icons from 'uikit/dist/js/uikit-icons';
 // loads the Icon plugin
 UIkit.use(Icons);
 
+import store from './store'
 
 new Vue({
   el: '#app',
+  store,
   render: h => h(App)
 })
