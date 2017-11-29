@@ -2,7 +2,6 @@
   <div>
     <app-navigation></app-navigation>
     <div class="uk-container">
-      <!-- TO-DO: Replace with vue-router -->
       <app-kuxiubal></app-kuxiubal>
     </div>
   </div>

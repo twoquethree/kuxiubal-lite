@@ -1,35 +1,25 @@
 <template>
-  <div uk-grid>
-    <div class="uk-width-1-2@s">
-      <div uk-grid>
-        <div class="uk-width-1-1@s">
-          <app-kuxiubalero-form></app-kuxiubalero-form>
-        </div>
-        <div class="uk-width-1-1@s">
-          <app-kuxiubaleros></app-kuxiubaleros>
-        </div>
-      </div>
-    </div>
-
-    <div class="uk-width-1-2@s">
-      <app-kuxiubal-result></app-kuxiubal-result>
-    </div>
+<div uk-grid>
+  <div class="uk-width-1-1@s">
+    <transition name="slide" mode="out-in">
+      <app-game v-if="true"></app-game>
+      <app-kuxiubal-result class="uk-width-1-2@m uk-align-center" v-else></app-kuxiubal-result>
+    </transition>
   </div>
+</div>
 </template>
 
 <script>
-import KuxiubaleroForm from './KuxiubaleroForm.vue'
-import Kuxiubaleros from './Kuxiubaleros.vue'
 import KuxiubalResult from './KuxiubalResult.vue'
+import Game from './Game.vue'
 
 export default {
   components: {
-    appKuxiubaleroForm: KuxiubaleroForm,
-    appKuxiubaleros: Kuxiubaleros,
+    appGame: Game,
     appKuxiubalResult: KuxiubalResult
   }
 }
 </script>
+<style scoped>
 
-<style lang="css">
 </style>

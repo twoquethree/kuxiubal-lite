@@ -9,13 +9,13 @@
   </div>
   <div class="uk-card-body">
     <div class="uk-margin-small uk-width-medium">
-      <input type="text" class="uk-input" placeholder="Kuxiubalero Name">
+      <input v-model="player.name" type="text" class="uk-input" placeholder="Kuxiubalero Name">
     </div>
     <div class="uk-margin-small uk-width-medium">
-      <input type="number" class="uk-input" placeholder="Account">
+      <input type="number" v-model="player.account" class="uk-input" placeholder="Account">
     </div>
   </div>
-  <div style="cursor: pointer;" class="uk-button-primary uk-light uk-text-center uk-card-footer">
+  <div style="cursor: pointer;" @click="addPlayer" class="uk-button-primary uk-light uk-text-center uk-card-footer">
     <div class="uk-button uk-button-text">
       ADD
     </div>
@@ -24,7 +24,21 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      player: {
+        name: '',
+        account: ''
+      }
+    }
+  },
+  methods: {
+    addPlayer() {
+      console.log('adding player')
+    }
+  }
+}
 </script>
 
 <style lang="css">
